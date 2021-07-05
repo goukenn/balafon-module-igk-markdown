@@ -9,6 +9,9 @@
 // @url: https://www.igkdev.com
 
 ///<summary>convert md file to html expression </summary>
+
+use igk\Markdown\MarkdownDocument;
+
 function git_convert_md_to_html($d, $content){
     $lines=explode("\n", $content);
     $cline=count($lines);
@@ -71,7 +74,8 @@ function git_convert_md_to_html($d, $content){
                         array_push($tab, substr($str, 1));
                         $marker .= "*";
                     }
-                    break;default: 
+                    break;
+                    default: 
                     if(!empty($marker)){
                         $str=$marker.$str;
                         $marker="";
@@ -98,7 +102,7 @@ function git_convert_md_to_html($d, $content){
                         array_push($tab, substr($str, $c + strlen($type) + 3));
                         if($c > 0)
                             array_push($tab, substr($str, 0, $c));
-                        continue;
+                        continue 2 ;
                     }
                     if(empty($mode) || !preg_match("/^(code)$/i", $mode)){
                         $pos=0;
@@ -158,4 +162,14 @@ function git_convert_md_to_html($d, $content){
             }
         }
     }
+}
+
+
+
+/**
+ * dummry markdown document
+ * @return MarkdownDocument 
+ */
+function igk_html_node_markdown_document(){
+   return new MarkdownDocument();    
 }

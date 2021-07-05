@@ -1,0 +1,25 @@
+<?php
+// @author: C.A.D. BONDJE DOUE
+// @file: /Volumes/Data/wwwroot/core/Packages/Modules/igk/dummy/.module.pinc.php
+// @desc: 
+// @date: 20210701 11:45:37
+namespace igk\Markdown;
+
+
+// + module definition
+return [
+//------------------------------------------------
+// define entry name space
+//
+"entry_NS"=>"igk\Markdown",
+
+//------------------------------------------------
+// version
+//
+"version"=>"1.0",
+
+//-------------------------------------------------
+// author
+//
+"author"=>"C.A.D. BONDJE DOUE"
+];
